@@ -15,7 +15,7 @@ after_success:
   - docker build -t regalme/multi-server ./server
   - docker build -t regalme/multi-worker ./worker
 # next is push up to docker hub
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --passwordstdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push regalme/multi-client
   - docker push regalme/multi-server
   - docker push regalme/multi-nginx
